@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;500;700&family=Nunito:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='./styles.css'>
+  <script src='https://kit.fontawesome.com/fe3b491692.js' crossorigin='anonymous'></script>
+  <script defer src='./assets/main.js'></script>
+  <!-- la etiqueta defer es para implementar el diferido, lo que quiere decir que procesará el html mientras procesa el js sin bloquear la implementación del render  -->
+  <title>SpotifyList</title>
+</head>
+<body>
+  <main>
+      <section class='home'>
+        <section class='header'>
+          <section class='header_left'>
+            <div>
+              <img class='header_left-logo' src='./assets/icons/logo.png' alt='logo diego'>
+            </div>
+          </section>
+          <section class='header_right'>
+            <ul>
+              <li class='button'><i class='fa fa-user'></i> <a href='#'>ver más</a></li>
+              <li class='button'><i class='fa fa-github'></i> <a href='#'>GitHub</a></li>
+            </ul>
+          </section>
+        </section>
+        <section class='home_info'>
+            <h1 class='home_info-title'>LISTAS DE SPOTIFY</h1>
+            <p class='home_info-text'>Busca a tu artista favorito y encuentra </br> las mejores listas de Spotify justo aquí</p>
+            <a href=''><span class='home_info-button'>más proyectos</span></a>
+          <div class='home_info-arrow'><i class='fa fa-arrow-down'></i></div>
+        </section>
+
+        <section class='section1'>
+          <div class='section1_playlist'>
+            <h2 class='section1_playlist-title'>¿Qué quieres </br> escuchar?</h2>
+          </div>
+          <div id='content'>
+            <input id='content_input' type='text'>
+            <span id="error"></span>
+            <button class='content_button' onclick="promiseSearch()" type='button'>Buscar</button>
+          </div>
+        </section>
+
+    </section>
+  </main>
+
+  <footer>
+  </footer>
+
+</body>
+</html>
