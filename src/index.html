@@ -15,38 +15,51 @@
 </head>
 <body>
   <main>
-      <section class='home'>
-        <section class='header'>
-          <section class='header_left'>
-            <div>
-              <img class='header_left-logo' src='./assets/icons/logo.png' alt='logo diego'>
-            </div>
-          </section>
-          <section class='header_right'>
-            <ul>
-              <li class='button'><i class='fa fa-user'></i> <a href='#'>ver más</a></li>
-              <li class='button'><i class='fa fa-github'></i> <a href='#'>GitHub</a></li>
-            </ul>
-          </section>
+    <section class='home'>
+      <section class="backHome">
+        <span>Bienvenido!</span>
+      </section>
+      <section class='header'>
+        <section class='header_left'>
+          <div>
+            <img class='header_left-logo' src='./assets/icons/logo.png' alt='logo diego'>
+          </div>
         </section>
-        <section class='home_info'>
-            <h1 class='home_info-title'>LISTAS DE SPOTIFY</h1>
-            <p class='home_info-text'>Busca a tu artista favorito y encuentra </br> las mejores listas de Spotify justo aquí</p>
-            <a href=''><span class='home_info-button'>más proyectos</span></a>
-          <div class='home_info-arrow'><i class='fa fa-arrow-down'></i></div>
+        <section class='header_center'>
+          <ul>
+            <li class='button'><i class='fa fa-user'></i> <a href='#'>ver más</a></li>
+            <li class='button'><i class='fa fa-github'></i> <a href='#'>GitHub</a></li>
+          </ul>
         </section>
-
-        <section class='section1'>
+        <section class='header_right'>
+          <ul>
+            <li class='search'><a href='#'><i class='fa fa-search'></i></a></li>
+            <li class='user'><a href='#'><i class="fa fa-user"></i></a></li>
+            <li class='settings'><a href='#'><i class='fa fa-gear'></i></a></li>
+            
+          </ul>
+        </section>
+      </section>
+      <section class='home_info'>
+           <h1 class='home_info-title'>LISTAS DE SPOTIFY</h1>
+          <p class='home_info-text'>Busca a tu artista favorito y encuentra </br> las mejores listas de Spotify justo aquí</p>
+          <a href=''><span class='home_info-button'>más proyectos</span></a>
+        <div class='home_info-arrow'><i class='fa fa-arrow-down'></i></div>
+      </section>
+      <section class='section1'>
           <div class='section1_playlist'>
-            <h2 class='section1_playlist-title'>¿Qué quieres </br> escuchar?</h2>
+            <h2 class='section1_playlist-title' id="section1_playlist-title">¿Qué quieres </br> escuchar?</h2>
           </div>
-          <div id='content'>
-            <input id='content_input' type='text'>
+          <div id='content' class="content">
+            <form class="content_form">
+              <input id='content_input' type='text' class='content_input' required>
+              <label class="lbl-nombre"></label>
+              <span class="text-nomb">Nombre</span>
+            </form>
             <span id="error"></span>
-            <button class='content_button' onclick="promiseSearch()" type='button'>Buscar</button>
+            <button class='content_button' onclick="promiseSearch(), deleteElement()" type='button' class='section1_playlist-button'>Buscar</button>
           </div>
-        </section>
-
+      </section>
     </section>
   </main>
 

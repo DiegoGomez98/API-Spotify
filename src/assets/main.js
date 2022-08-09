@@ -1,6 +1,6 @@
 const API = 'https://spotify23.p.rapidapi.com';
 
-const API_TRACK = (id) => `${API}/playlist_tracks/?id=${id}&offset=0&limit=10`;
+const API_TRACK = (id) => `${API}/playlist_tracks/?id=${id}&offset=0&limit=9`;
 const API_SEARCH = (id) => `${API}/search/?q=${id}&type=playlists&offset=0&limit=10&numberOfTopResults=5`;
 
 const content = null || document.getElementById('content');
@@ -8,8 +8,6 @@ const content = null || document.getElementById('content');
 // a agregar la iteración de la petición que vamos a hacer a la API
 
 const contentInput = document.getElementById('content_input');
-
-const divPlaylist = document.querySelectorAll('divPlaylist');
 
 const options = {
   method: 'GET',
@@ -43,11 +41,12 @@ async function promiseTrack(param) {
     const playlisTracks = await fetchData(API_TRACK(param));
     let track = `
       ${playlisTracks.items.map(element => `
-      <div>
+      <div class='tracks'>
       <audio controls class='buttonPlaylist-data'> 
-        <source src='${element.track.preview_url}' type='audio/mpeg'
+        <source src='${element.track.preview_url}' type='audio/mpeg'>
       </audio>
       <h2>${element.track.name}</h2>
+      <h3>${element.track.artists.map(e => e.name)}</h3>
       </div>`
       )}
       `;
@@ -82,11 +81,9 @@ async function promiseSearch() {
     let view = `
     ${items.playlists.items.map(post => `
     <div class='section1_playlist-data'>
-    <img src='${post.data.images.items[0].sources[0].url}' alt='${post.data.owner.name}' class='section1_info-img'>
-    <h2>${post.data.name}</h2>
-    <span>${post.data.description}</span>
-    <button id='${(post.data.uri).slice(17,39)}' class='buttonPlaylist'>Escuchar ahora</button>
-    <div class='divPlaylist'></div>
+      <img src='${post.data.images.items[0].sources[0].url}' alt='${post.data.owner.name}' class='section1_info-img'>
+      <h2>${post.data.name}</h2>
+      <button id='${(post.data.uri).slice(17,39)}' class='buttonPlaylist'>Escuchar ahora</button>
     </div>`
     )}
     `;
@@ -97,3 +94,10 @@ async function promiseSearch() {
 };
 // con esto tenemos la sentencia que va a permitir automaticamente cuando
 // esté cargando este archivo, cargar la función 
+
+function deleteElement() {
+  let section1_playlist = document.getElementById(section1_playlist);
+  section1_playlist.removeChild(section1_playlist-title);
+
+  return section1_playlist
+};

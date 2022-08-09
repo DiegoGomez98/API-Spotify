@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Diego-gompa/RoyalEnfield-landing#readme",
   "dependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1"
   }
 }
