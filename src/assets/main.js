@@ -16,7 +16,7 @@ const options = {
   headers: {
     // 'Access-Control-Allow-Credentials': 'true',
     // 'Access-Control-Allow-Origin': 'instagram130.p.rapidapi.com',
-    'X-RapidAPI-Key': 'c6e6df5056msh4b6786b32ff8717p12b71ajsn456043ea61af',
+    'X-RapidAPI-Key': API_KEY,
 		'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
   }
 };
